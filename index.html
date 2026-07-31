@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <script>
+
+        //  function ename(){
+
+        //             let name = prompt("Enter your name");
+        //             window.localStorage.setItem("nam",name);
+        //             alert("Name recived");
+        //         }
+
+        function savename() {
+            let enam = prompt("Enter your name");
+            window.localStorage.setItem("nam", enam);
+            document.getElementById("hname").innerText = enam;
+
+
+        }
+
+        function delname() {
+            document.getElementById("hname").innerText = "";
+            localStorage.removeItem("nam");
+        }
+
+        function showName(){
+           let n =  localStorage.getItem("nam");
+
+
+
+
+if(n === ""){
+    document.getElementById("hname").innerText = "Enter value ";
+
+}
+else{
+    document.getElementById("hname").innerText = n;
+
+}
+
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body onload="showName()">
+    <h1 >Welcome  <span id="hname"></span></h1>
+    <!-- <button onclick="ename()">Enter name</button> -->
+    <button onclick="savename()">Save name</button>
+    <button onclick="delname()">delete name</button>
+
+
+
+
+
+</body>
+
+</html>
